@@ -1,5 +1,8 @@
 exports.landingPage = (req, res) => {
-  res.render('index');
+  res.render('index', {
+    title: 'injected title',
+    numbers: [0, 1, 2, 3, 4, 5]
+  });
   return;
 }
 
