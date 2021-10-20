@@ -17,12 +17,13 @@ const helmet = require('helmet');
 const csrf = require('csurf');
 const { globalMiddleware, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
 
-// setting up express to use helmet to prevent attacks
+// setting up express to use helmet, which makes a number of improvements in page headers
 app.use(helmet());
 
 // setting up express to deal with req.body
 app.use(express.urlencoded({ extended: true }));
-
+// setting up express to deal with json responses
+app.use(express.json());
 // setting up express to find static files folder
 app.use(express.static(path.resolve(__dirname, 'public')));
 
