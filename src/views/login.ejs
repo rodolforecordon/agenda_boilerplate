@@ -1,5 +1,5 @@
-<%- include('includes/head') %>
-<%- include('includes/navbar') %>
+<%- include('includes/head'); %>
+<%- include('includes/navbar'); %>
 
 <div class="container">
   <div class="row">
@@ -8,12 +8,14 @@
       <h1 class="text-center">Login</h1>
       <p class="text-center lead">Sign Up / Login</p>
 
+      <%- include('includes/messages'); %> 
+
       <div class="row">
-        <%- include('includes/signUpForm') %>
-        <%- include('includes/loginForm') %>
+        <%- include('includes/signUpForm'); %>
+        <%- include('includes/loginForm'); %>
       </div>
 
   </div>
 </div>
 
-<%- include('includes/footer') %> 
+<%- include('includes/footer'); %> 
