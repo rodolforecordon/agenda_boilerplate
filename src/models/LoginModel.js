@@ -17,7 +17,7 @@ class Login {
   }
 
   async register() {
-    this.check();
+    this.check(); 
     if (this.errors.length > 0) return;
 
     await this.userExists();
