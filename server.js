@@ -18,7 +18,10 @@ const csrf = require('csurf');
 const { globalMiddleware, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
 
 // setting up express to use helmet, which makes a number of improvements in page headers
-app.use(helmet());
+// in production it should be app.use(helmet())
+app.use(helmet({
+  contentSecurityPolicy: false
+}));
 
 // setting up express to deal with req.body
 app.use(express.urlencoded({ extended: true }));
