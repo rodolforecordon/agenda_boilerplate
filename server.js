@@ -19,9 +19,7 @@ const { globalMiddleware, checkCsrfError, csrfMiddleware } = require('./src/midd
 
 // setting up express to use helmet, which makes a number of improvements in page headers
 // in production it should be app.use(helmet())
-app.use(helmet({
-  contentSecurityPolicy: false
-}));
+app.use(helmet());
 
 // setting up express to deal with req.body
 app.use(express.urlencoded({ extended: true }));
